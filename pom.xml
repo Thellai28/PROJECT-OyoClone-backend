@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.oyo</groupId>
+	<artifactId>back-end</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>back-end</name>
+	<description>This application will facilitate uses to book the hotel virtually before reaching the hotels. User can also select the duration of stay, specification or categorie of rooms..etc.</description>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+
+		<dependency><!-- simplifies the configuration and setup of Spring Data JPA in your Spring Boot application.
+		 It's a part of the larger Spring Data project, which aims to simplify data access in Spring applications by
+		 				providing a high-level abstraction over data access technologies, including
+		 				JPA (Java Persistence API).  you get everything you need to set up
+		 				JPA (Java Persistence API) based data access layer in your Spring Boot application,
+		 				including necessary dependencies, configuration, and auto-configuration.It includes the
+		 				Hibernate ORM (Object-Relational Mapping) framework, which is commonly used with
+		 				Spring Data JPA for managing relational database entities and their interactions-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency><!-- provides essential dependencies and configurations to build web applications in Spring Boot.
+		 				It includes libraries and components required for web development, such as Spring MVC,
+		 				embedded web server (Tomcat, Jetty, or Undertow), and other necessary dependencies for
+		 				handling HTTP requests and responses.With this dependency, you can quickly set up a
+		 				web application project in Spring Boot and start developing RESTful APIs, web services,
+		 				or traditional web applications using Spring MVC. It abstracts away the complexities of
+		 				configuring web-related dependencies and provides sensible defaults to get you started
+		 				quickly with web development in Spring Boot.-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency> <!-- Importing Spring security into this project -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency><!-- Spring bean validation. Bean Validation allows you to define constraints on your
+						JavaBean properties, such as whether a field is required, its length, format, etc. -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency> <!-- MySQL connector, to connect and work with MySQL database -->
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency><!-- For getter & setter implementation, to avoid boiler plate code -->
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<dependency><!-- To convert JSON to java object or vice versa -->
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.15.2</version>
+		</dependency>
+
+		<dependency><!-- Provides common utility classes to work with java applications -->
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
+		<dependency><!-- to enhance the configuration capabilities and provide
+							additional metadata processing during the build process -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<dependency><!--It provides essential classes and interfaces for creating,
+					parsing, validating, and working with JWTs, such as JwtBuilder, Claims, Jws, and JwtParser.
+					It is typically used during both compilation and runtime phases of your application-->
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>0.11.5</version>
+		</dependency>
+
+		<dependency><!-- The concrete implementations and logic for handling JWTs,
+						such as token creation, validation, and parsing. It's used specifically at runtime when your
+						application interacts with JWTs. It contains the actual implementation details, algorithms,
+						and cryptographic operations related to JWT processing It may depend on the jjwt-api module to
+						define its API but provides the concrete functionality required for JWT operations-->
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency><!-- to serialize JWT claims (payload) to JSON format and deserialize JWTs
+						from JSON back to Java objects -->
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>0.11.5</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
+		<dependency><!--provides a convenient way to set up testing infrastructure in Spring Boot applications
+		 				It includes essential testing libraries and dependencies such as JUnit, Spring Test,
+		 				Spring Boot Test, AssertJ, and Mockito, among others.  you can write and execute unit tests,
+		 				integration tests, and end-to-end tests for your Spring Boot application.  you can write and
+		 				execute unit tests, integration tests, and end-to-end tests for your Spring Boot application-->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
