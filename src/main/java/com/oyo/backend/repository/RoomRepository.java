@@ -1,4 +1,7 @@
 package com.oyo.backend.repository;
 
-public interface RoomRepository {
+import com.oyo.backend.model.Room;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RoomRepository extends JpaRepository<Room, Long> {
 }
