@@ -16,6 +16,7 @@ import java.sql.SQLException;
 
 @RequiredArgsConstructor // Creates constructor injection by default, the commented out part
 @RequestMapping("/rooms")
+@RestController
 public class RoomController {
     private final IRoomService roomService;
 

@@ -42,10 +42,10 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency> <!-- Importing Spring security into this project -->
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+<!--		<dependency> &lt;!&ndash; Importing Spring security into this project &ndash;&gt;-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-security</artifactId>-->
+<!--		</dependency>-->
 
 		<dependency><!-- Spring bean validation. Bean Validation allows you to define constraints on your
 						JavaBean properties, such as whether a field is required, its length, format, etc. -->

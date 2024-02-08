@@ -3,8 +3,7 @@ package com.oyo.backend.service;
 import com.oyo.backend.model.Room;
 import com.oyo.backend.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
-import org.springframework.web.context.support.GroovyWebApplicationContext;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.sql.rowset.serial.SerialBlob;
@@ -13,8 +12,10 @@ import java.math.BigDecimal;
 import java.sql.Blob;
 import java.sql.SQLException;
 
+
+@Service
 @RequiredArgsConstructor
-public class RoomServiceImpl implements IRoomService{
+public class RoomService implements IRoomService{
     private final RoomRepository roomRepository;
     @Override
     public Room addNewRoom( MultipartFile file, String roomType, BigDecimal roomPrice ) throws IOException, SQLException {

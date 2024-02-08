@@ -28,6 +28,8 @@ public class Room {
     @Lob // We usually save images as large objects 'LOB' and  we use Blob as variable type "Binary large object "
     private Blob photo;
 
+    private boolean isBooked;
+
     @OneToMany(mappedBy = "room", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
     /*
         Without the room, the bookedRooms doesn't make any sense, here the Rooms is the parent and BookedRooms is the child
