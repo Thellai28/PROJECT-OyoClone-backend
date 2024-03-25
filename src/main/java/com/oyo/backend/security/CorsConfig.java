@@ -22,9 +22,14 @@ public class CorsConfig {
     public FilterRegistrationBean corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
+
+
+        config.setAllowCredentials(true); // to allow browser to send credentials along with request
+        // like JWT, cookies, session Id's
         config.addAllowedOrigin("http://localhost:5173");
-        config.setAllowedHeaders(Arrays.asList(
+
+
+        config.setAllowedHeaders(Arrays.asList(// For preFlight request.
                 HttpHeaders.AUTHORIZATION,
                 HttpHeaders.CONTENT_TYPE,
                 HttpHeaders.ACCEPT));
