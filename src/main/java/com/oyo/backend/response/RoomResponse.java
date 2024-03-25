@@ -37,7 +37,7 @@ public class RoomResponse {
         this.roomPrice = roomPrice;
         this.isBooked = isBooked;
         this.photo = (photoBytes != null ) ? Base64.encodeBase64String( photoBytes) : null ;
-        this.bookings = bookings;
+        //this.bookings = bookings;
 
         /* ----------< NOTES : why we have get the byte[], when we retrieve images form DB >-----------
             The image will be stored in binary representation, when we retrieve that image from the data base,

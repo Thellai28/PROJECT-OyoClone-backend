@@ -1,17 +1,13 @@
 package com.oyo.backend.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.apache.tomcat.websocket.server.WsFrameServer;
 
 import java.time.LocalDate;
 
 @Entity
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class BookedRoom {
@@ -20,10 +16,10 @@ public class BookedRoom {
     private long bookingId;
 
     @Column( name = "check_In" )
-    private LocalDate checkedInDate;
+    private LocalDate checkInDate;
 
     @Column( name = "check_Out")
-    private LocalDate checkedOutDate;
+    private LocalDate checkOutDate;
 
     @Column( name = "guest_FullName" )
     private String guestFullName;
@@ -47,17 +43,6 @@ public class BookedRoom {
     @JoinColumn( name = "room_id")
     // in booking table, the primary key of the Room table will be used as foreign key
     private Room room;
-
-
-
-
-
-
-
-
-
-
-
 
 
     public void calculateTotalNumberOfGuest(){ // why we are using public here, why not private?

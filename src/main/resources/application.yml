@@ -1,35 +1,35 @@
-server:
-  port: 9192
-
-
-spring:
-  datasource:
-    username: root
-    password: Thell@i@#$%96
-    url: jdbc:mysql://localhost:3306/oyo_clone
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update # update the database schema automatically based on changes detected in the entity mappings.
-      format_sql: true # format the SQL query for better readability.
-  servlet:
-    multipart:
-      max-file-size: 5MB # max size we can upload into server
-      max-request-size: 5MB # max size we can retrieve into server
-      file-size-threshold: 2KB # size beyond which we have to consider sotring data in data disc
-
-#--------------------------< why we need driver-class-name: >-------------------------
-  #In a Spring Boot application, the spring.datasource.driver-class-name property specifies the
-  #fully qualified class name of the JDBC driver that Spring should use to connect to the database
-  #specified in the datasource URL (spring.datasource.url).
-  
-  #The JDBC driver class is necessary for establishing a connection to the database because it provides the
-  #implementation of the JDBC API necessary to communicate with the specific database server. Each database
-#  server (e.g., MySQL, PostgreSQL, Oracle) typically requires a different JDBC driver class.
-
-
-
-
-
-
+#server:
+#  port: 9192
+#
+#
+#spring:
+#  datasource:
+#    username: root
+#    password: Thell@i@#$%96
+#    url: jdbc:mysql://localhost:3306/oyo_clone
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update # update the database schema automatically based on changes detected in the entity mappings.
+#      format_sql: true # format the SQL query for better readability.
+#  servlet:
+#    multipart:
+#      max-file-size: 5MB # max size we can upload into server
+#      max-request-size: 5MB # max size we can retrieve into server
+#      file-size-threshold: 2KB # size beyond which we have to consider sotring data in data disc
+#
+##--------------------------< why we need driver-class-name: >-------------------------
+#  #In a Spring Boot application, the spring.datasource.driver-class-name property specifies the
+#  #fully qualified class name of the JDBC driver that Spring should use to connect to the database
+#  #specified in the datasource URL (spring.datasource.url).
+#
+#  #The JDBC driver class is necessary for establishing a connection to the database because it provides the
+#  #implementation of the JDBC API necessary to communicate with the specific database server. Each database
+##  server (e.g., MySQL, PostgreSQL, Oracle) typically requires a different JDBC driver class.
+#
+#
+#
+#
+#
+#
