@@ -38,10 +38,15 @@ public class CorsConfig {
                 HttpMethod.POST.name(),
                 HttpMethod.PUT.name(),
                 HttpMethod.DELETE.name()));
-        config.setMaxAge(MAX_AGE);
-        source.registerCorsConfiguration("/**", config);
-        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
-        bean.setOrder(CORS_FILTER_ORDER);
+
+        config.setMaxAge(MAX_AGE); // How long the preflight request can be cached in the browser's memory :
+
+        source.registerCorsConfiguration("/**", config);// configuring all end points with this CORS object.
+
+        FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source)); // adding CORS filter into the filter chain :
+
+        bean.setOrder(CORS_FILTER_ORDER); // Setting the order of execution of CORS filter in filter chain :
+
         return bean;
     }
 }

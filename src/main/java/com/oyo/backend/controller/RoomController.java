@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -37,6 +38,7 @@ public class RoomController {
 
 
     @PostMapping( "/add/new-room" )
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<RoomResponse> addNewRoom( // This method will return an HTTP response.
             @RequestParam( "photo" ) MultipartFile photo,
             @RequestParam("roomType" ) String roomType,
@@ -135,6 +137,7 @@ public class RoomController {
 
 
 @DeleteMapping("/delete/room/{roomId}")
+@PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteRoom( @PathVariable Long roomId ){
         // If you need to use different variable name other than roomId, then you have to use this syntax
         // deleteRoom( @PathVariable("roomId") Long id ) -> syntax to use different variable name.

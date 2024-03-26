@@ -58,7 +58,10 @@ public class WebSecurityConfig {
                 .exceptionHandling(exception -> exception.authenticationEntryPoint(jwtAuthEntryPoint)) // to handle exceptions.
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(
-                        auth -> auth.requestMatchers("/auth/**").permitAll().anyRequest().authenticated());
+                        auth -> auth
+                                .requestMatchers("/auth/**", "/room/**").permitAll()// Allow access to paths starting with "/auth" and "/room" without authentication
+                                .requestMatchers("/roles/**").hasRole("ADMIN")// Allow access to paths starting with "/roles" only for users with the role "ADMIN"
+                                .anyRequest().authenticated());// Authenticate all other requests
 
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(authenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class);
